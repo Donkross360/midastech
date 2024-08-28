@@ -1,7 +1,7 @@
 import type { APIRoute, ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import icon from "@images/icon.png";
-import maskableIcon from "@images/icon-maskable.png";
+// import maskableIcon from "@images/icon-maskable.png";
 
 interface Favicon {
   purpose: 'any' | 'maskable' | 'monochrome';
@@ -16,11 +16,11 @@ const favicons: Favicon[] = [
     src: icon,
     sizes,
   },
-  {
-    purpose: 'maskable',
-    src: maskableIcon,
-    sizes,
-   },
+  // {
+  //   purpose: 'maskable',
+  //   src: maskableIcon,
+  //   sizes,
+  //  },
 ];
 
 export const GET: APIRoute = async () => {
@@ -44,8 +44,8 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "MidasTech",
+    name: "MidasTech",
     icons,
     display: "minimal-ui",
     id: "/",

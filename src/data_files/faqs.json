@@ -1,29 +1,25 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "We are here to answer all of your questions, wether they are solar related, and, or specific to our products or services ",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What is the difference between your Premium, Basic, Hybrid, and Flexible Payment Plans?",
+      "answer": "Premium Plan: Outright payment for installation and immediate access to solar or wind energy. \nBasic Plan: Pay-as-you-go model where we install and meter your house, and you buy tokens to recharge.\n Hybrid Plan: Installation of both wind and solar energy systems for maximum efficiency. Flexible Payment Plan: Pay 50% upfront, get the installation, and pay the remaining balance over time."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "How long does the consultation and installation process take?",
+      "answer": "The initial consultation typically takes a few days, during which we assess your energy needs and property. The design phase follows, and once approved, installation can take anywhere from a few days to a couple of weeks, depending on the complexity of the system."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "What kind of maintenance does the solar or wind energy system require?",
+      "answer": "Our systems require minimal maintenance. Regular cleaning of the solar panels and periodic inspections of the wind turbines are usually sufficient. We provide ongoing support and maintenance services to ensure your system operates efficiently."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "How much can I expect to save on my energy bills?",
+      "answer": "  Savings vary based on your energy consumption, the size of the installed system, and local energy rates. During the consultation, we provide a detailed projection of your potential savings."
     },
     {
-      "question": "How current are the online resources and tutorials?",
+      "question": "What happens if my system needs repairs?",
       "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
-    },
-    {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
     }
   ]
 }
