@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises'
-import { globby } from 'globby'
+import  globby  from 'globby'
 import { minify } from 'html-minifier-terser'
 
 // Get all HTML files from the output directory
