@@ -1,6 +1,5 @@
 ---
 // Import the necessary components
-//import { Image } from "astro:assets"
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
@@ -14,7 +13,6 @@ import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro"
 import heroImage from "@images/hero-image.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
-//import splash from "@images/splash-image.avif";
 import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
@@ -35,7 +33,7 @@ const avatarSrcs: Array<string> = ["https://midastech.s3.us-east-2.amazonaws.com
   <HeroSection
     title=`<span class="text-green-400 dark:text-green-400">MIDAS</span><br />
         <span class="text-yellow-500 dark:text-yellow-400">TECH</span>`
-    subTitle="A pioneering solar and wind energy as a service company dedicated to transforming Africa's energy landscape."
+    subTitle="Our company is a pioneering solar and wind Energy-as-a-Service (EaaS) provider dedicated to transforming Africa's energy landscape by delivering innovative and sustainable energy solutions."
     primaryBtn="Start Exploring"
     primaryBtnURL="/products"
     secondaryBtn="Contact Sales Team"
