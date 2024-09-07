@@ -10,20 +10,20 @@ export const servicesData = [
   {
     title: "Discover Integrations",
     description:
-      "Supercharge Your Workflow. Seamless integrations with all your favorite tools",
+      "Supercharge Your energy needs. Seamless integrations with all current energy installations ",
     icon: "puzzle",
     url: "#",
   },
   {
     title: "Expert Services",
-    description: "Go beyond tools with MidasTech's expert services",
+    description: "Go for the quality with MidasTech's expert services",
     icon: "rocket",
     url: "#",
   },
   {
-    title: "Cutting-Edge Tools",
+    title: "Cutting-Edge products",
     description:
-      "Build Smarter, Faster. Experience next-level efficiency with MidasTech's cutting-edge construction tools",
+      "Build Smarter, Faster. Experience next-level efficiency with MidasTech's cutting-edge prducts and services",
     icon: "hammer",
     url: "#",
   },
