@@ -16,4 +16,4 @@ Crawl-delay: 2
 User-agent: *
 Disallow: /
 
-Sitemap: https://www.midastechno.com/sitemap-index.xml
+Sitemap: https://midastechno.com/sitemap-index.xml

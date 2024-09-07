@@ -8,7 +8,7 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://www.midastechno.com",
+  site: "https://midastechno.com",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -27,7 +27,7 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "en", // All urls that don't contain `fr` after `https://www.midastecno.com/` will be treated as default locale, i.e. `en`
+        defaultLocale: "en", // All urls that don't contain `fr` after `https://midastechno.com/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
           fr: "fr",
@@ -101,14 +101,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://www.midastechno.com" + "/social.webp",
+            content: "https://midastechno.com" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://www.midastechno.com" + "/social.webp",
+            content: "https://midastechno.com" + "/social.webp",
           },
         },
       ],
