@@ -1,0 +1,133 @@
+---
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">,) =>
+    a.data.main.id - b.data.main.id,
+);
+
+// Define variables for page content
+const title: string = "In Store";
+const subTitle: string =
+  "Discover the reliability and efficiency of our solar and wind energy solutions, designed for both residential and commercial needs. Each of our systems is engineered for maximum performance and built to withstand the elements, ensuring you have sustainable energy whenever you need it.";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [
+  // First testimonial data
+  {
+    content:
+      " \"Since installing their solar and wind energy systems, our energy costs have significantly decreased, and we’ve achieved true energy independence. The reliability and performance of the equipment in all weather conditions are impressive. It’s clear they understand what it takes to power homes sustainably.\" ",
+    author: "Jason Clark",
+    role: "Site Foreman | TopBuild",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Second testimonial data
+  {
+    content:
+      " \"After upgrading to MidasTech CCTV system recommedation, the level of security on our property has been exceptional. The cameras provide clear, high-definition footage day and night, and the installation process was seamless. We now feel much safer knowing everything is being monitored with such precision.\" ",
+    author: "Maria Gonzalez",
+    role: "Interior Designer | Creative Spaces",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Third testimonial data
+  {
+    content:
+      " \"MidasTech access control system has revolutionized how we manage building entry. The setup is user-friendly, and the level of security and flexibility it provides is unmatched. We can now monitor and control access to every area of the facility with ease and confidence.\" ",
+    author: "Richard Kim",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
+
+const pageTitle: string = `Shop | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://midastechno.com/shop",
+    "url": "https://www.midastechno.com/shop",
+    "name": "Rnewable Energy | MidasTech",
+    "description": "",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://www.midastechno.com",
+      "name": "MidasTech",
+      "description": ""
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Client Reviews" url="#testimonials" noArrow={true} />
+    </div>
+    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
+    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} />;
+          } else {
+            return <CardWide product={product} />;
+          }
+        })
+      }
+    </section>
+  </div>
+  <!--Features statistics section-->
+  <FeaturesStatsAlt
+    title="Why Choose MidasTech?"
+    subTitle="At MidasTech, we are committed to providing energy-efficient solutions and advanced security systems tailored to your needs. Whether you're looking to power your home sustainably or safeguard your premises, our expert team ensures a seamless experience from consultation to installation. Here’s why customers trust us:"
+    benefits={[
+      "Sustainable Power Solutions: Harness the power of the sun and wind with our premium solar and wind energy systems, designed for efficiency and reliability.",
+      "Cutting-Edge Security: Our CCTV and access control systems provide top-tier security, with advanced monitoring and user-friendly access controls.",
+      "Expert Installation: With a dedicated team of professionals, we guarantee high-quality installations and ongoing support for all our services.",
+    ]}
+  />
+  <!--Testimonials section-->
+  <TestimonialsSectionAlt
+    title="REVIEWS"
+    testimonials={testimonials}
+  />
+</MainLayout>

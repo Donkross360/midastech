@@ -2,7 +2,8 @@
 const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "Cctv", url: "/cctv" },
-  { name: "Smart Home", url: "#" },
+  { name: "Smart Home", url: "/smart-home" },
+  { name: "Shop", url: "/products" },
   { name: "Blog", url: "#" },
   { name: "Contact", url: "/contact" },
 ];
@@ -13,6 +14,7 @@ const footerLinks = [
     links: [
       { name: "Documentation", url: "#" },
       { name: "Batteries & Solar panels", url: "#" },
+      { name: "CCTV & Fire Alarms", url: "#" },
       { name: "Intallation Services", url: "#" },
     ],
   },
@@ -28,7 +30,7 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
+  facebook: "https://www.facebook.com/MidasTechnoLTD/",
   x: "https://twitter.com/",
   github: "https://github.com/",
   google: "https://www.google.com/",

@@ -1,38 +1,40 @@
-
+// An array of links for navigation bar
 const navBarLinks = [
-  { name: "Accueil", url: "/fr" },
-  { name: "Produits", url: "/fr/products" },
-  { name: "Services", url: "/fr/services" },
-  { name: "Blog", url: "/fr/blog" },
-  { name: "Contact", url: "/fr/contact" },
+  { name: "Home", url: "/" },
+  { name: "Cctv", url: "/cctv" },
+  { name: "Smart Home", url: "#" },
+  { name: "Shop", url: "#" },
+  { name: "Blog", url: "#" },
+  { name: "Contact", url: "/contact" },
 ];
-
+// An array of links for footer
 const footerLinks = [
   {
-    section: "Écosystème",
+    section: "Ecosystem",
     links: [
-      { name: "Documentation", url: "/fr/welcome-to-docs/" },
-      { name: "Outils et Équipements", url: "/fr/products" },
-      { name: "Services de Construction", url: "/fr/services" },
+      { name: "Documentation", url: "#" },
+      { name: "Batteries & Solar panels", url: "#" },
+      { name: "CCTV & Fire Alarms", url: "#" },
+      { name: "Intallation Services", url: "#" },
     ],
   },
   {
-    section: "Société",
+    section: "Company",
     links: [
-      { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/fr/blog" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "About us", url: "#" },
+      { name: "Blog", url: "#" },
+      { name: "Careers", url: "#" },
+      { name: "Customers", url: "#" },
     ],
   },
 ];
-
+// An object of links for social icons
 const socialLinks = {
-  facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/MidasTech",
-  google: "#",
-  slack: "#",
+  facebook: "https://www.facebook.com/",
+  x: "https://twitter.com/",
+  github: "https://github.com/",
+  google: "https://www.google.com/",
+  slack: "https://slack.com/",
 };
 
 export default {

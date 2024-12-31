@@ -28,6 +28,15 @@ const productsCollection = defineCollection({
       btnTitle: z.string(),
       btnURL: z.string(),
     }),
+    snipcart: z.object({
+      title: z.string(),
+      id: z.string(),
+      price: z.number(),
+      description: z.string(),
+      url: z.string(),
+      custom1Name: z.string().optional(),
+      custom1Options: z.string().optional()
+    }),
     descriptionList: z.array(
       z.object({
         title: z.string(),
