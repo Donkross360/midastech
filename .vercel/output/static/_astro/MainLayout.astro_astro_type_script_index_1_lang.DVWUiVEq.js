@@ -1,0 +1,1 @@
+import"./Head.astro_astro_type_script_index_0_lang.D_BDA9qd.js";localStorage.getItem("hs_theme")==="dark"||!("hs_theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark");
