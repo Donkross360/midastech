@@ -109,8 +109,8 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
                   price={product.data.snipcart.price}
                   url={product.data.snipcart.url}
                   description={product.data.snipcart.description}
-                  custom1Name={product.data.snipcart.custom1Name}
-                  custom1Options={product.data.snipcart.custom1Options}
+                  custom1Name={product.data.snipcart.custom1Name || ""}
+                  custom1Options={product.data.snipcart.custom1Options || ""}
                 />
               </p>
             </div>

@@ -75,70 +75,99 @@ We set the language of the page to English and add classes for scrollbar and scr
       "ZjdiNDdkYWQtM2JhOC00ZTQ0LThkOWQtMzU1YWVkNjAzOGQzNjM4NjM0NjAwMDY0NDg0Mjc0",
     loadStrategy: "on-user-interaction",
     modalStyle: "side",
+    protocol: "https",
+    domain: "cdn.snipcart.com",
+    version: "3.0", // Required property
+    currency: "USD", // Example, replace with actual currency
+    templatesUrl: "https://www.midastechno.com/shop", // Replace with the actual templates URL
+    addProductBehavior: "addToCart", // Example value, adjust as needed
+    timeoutDuration: 2750, // Required property
   };
+  
+  const e = document.createElement("script") as HTMLScriptElement;
 
   (() => {
-    var c, d;
-    (d = (c = window.SnipcartSettings).version) != null ||
-      (c.version = "3.0");
-    var s, S;
-    (S = (s = window.SnipcartSettings).timeoutDuration) != null ||
-      (s.timeoutDuration = 2750);
-    var l, p;
-    (p = (l = window.SnipcartSettings).domain) != null ||
-      (l.domain = "cdn.snipcart.com");
-    var w, u;
-    (u = (w = window.SnipcartSettings).protocol) != null ||
-      (w.protocol = "https");
-    var f =
-        window.SnipcartSettings.version.includes("v3.0.0-ci") ||
-        (window.SnipcartSettings.version != "3.0" &&
-          window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
-            numeric: !0,
-            sensitivity: "base",
-          }) === -1),
-      m = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
+    let c, d;
+    (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0");
+
+    let s, S;
+    (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750);
+
+    let l, p;
+    (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com");
+
+    let w, u;
+    (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https");
+
+    const f =
+      window.SnipcartSettings.version.includes("v3.0.0-ci") ||
+      (window.SnipcartSettings.version !== "3.0" &&
+        window.SnipcartSettings.version.localeCompare("3.4.0", undefined, {
+          numeric: true,
+          sensitivity: "base",
+        }) === -1);
+
+    const m = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
     window.LoadSnipcart = o;
-    document.readyState === "loading"
-      ? document.addEventListener("DOMContentLoaded", r)
-      : r();
-    function r() {
-      window.SnipcartSettings.loadStrategy
-        ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
-          (m.forEach((t) => document.addEventListener(t, o)),
-          setTimeout(o, window.SnipcartSettings.timeoutDuration))
-        : o();
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", r);
+    } else {
+      r();
     }
-    var a = !1;
+
+    function r() {
+      if (
+        window.SnipcartSettings.loadStrategy &&
+        window.SnipcartSettings.loadStrategy === "on-user-interaction"
+      ) {
+        m.forEach((t) => document.addEventListener(t, o));
+        setTimeout(o, window.SnipcartSettings.timeoutDuration);
+      } else {
+        o();
+      }
+    }
+
+    let a = false;
+
     function o() {
       if (a) return;
-      a = !0;
-      let t = document.getElementsByTagName("head")[0],
-        e = document.querySelector("#snipcart"),
-        i = document.querySelector(
-          `script[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
-        ),
-        n = document.querySelector(
-          `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
-        );
-      e ||
-        ((e = document.createElement("div")),
-        (e.id = "snipcart"),
-        e.setAttribute("hidden", "true"),
-        document.body.appendChild(e)),
-        v(e),
-        i ||
-          ((i = document.createElement("script")),
-          (i.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`),
-          (i.async = !0),
-          t.appendChild(i)),
-        n ||
-          ((n = document.createElement("link")),
-          (n.rel = "stylesheet"),
-          (n.type = "text/css"),
-          (n.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`),
-          t.prepend(n)),
-        m.forEach((g) => document.removeEventListener(g, o));
+      a = true;
+
+      const head = document.getElementsByTagName("head")[0];
+      let snipcartDiv = document.querySelector("#snipcart") as HTMLElement | null;
+      let script = document.querySelector(
+        `script[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
+      ) as HTMLScriptElement | null;
+      let link = document.querySelector(
+        `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
+      ) as HTMLLinkElement | null;
+
+      if (!snipcartDiv) {
+        snipcartDiv = document.createElement("div");
+        snipcartDiv.id = "snipcart";
+        snipcartDiv.setAttribute("hidden", "true");
+        document.body.appendChild(snipcartDiv);
+      }
+
+      v(snipcartDiv);
+
+      if (!script) {
+        script = document.createElement("script");
+        script.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`;
+        script.async = true;
+        head.appendChild(script);
+      }
+
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`;
+        head.prepend(link);
+      }
+
+      m.forEach((event) => document.removeEventListener(event, o));
 
       // Inject custom styles for Snipcart modal
       const style = document.createElement("style");
@@ -156,20 +185,27 @@ We set the language of the page to English and add classes for scrollbar and scr
           background-color: rgba(0, 0, 0, 0.7);
         }
       `;
-      t.appendChild(style);
+      head.appendChild(style);
     }
-    function v(t) {
-      !f ||
-        ((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
-        window.SnipcartSettings.addProductBehavior &&
-          (t.dataset.configAddProductBehavior =
-            window.SnipcartSettings.addProductBehavior),
-        window.SnipcartSettings.modalStyle &&
-          (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle),
-        window.SnipcartSettings.currency &&
-          (t.dataset.currency = window.SnipcartSettings.currency),
-        window.SnipcartSettings.templatesUrl &&
-          (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
+
+    function v(element: HTMLElement) {
+      if (!f) return;
+
+      const settings = window.SnipcartSettings;
+
+      element.dataset.apiKey = window.SnipcartSettings.publicApiKey;
+      if (settings.addProductBehavior) {
+        element.dataset.configAddProductBehavior = settings.addProductBehavior;
+      }
+      if (settings.modalStyle) {
+        element.dataset.configModalStyle = settings.modalStyle;
+      }
+      if (settings.currency) {
+        element.dataset.currency = settings.currency;
+      }
+      if (settings.templatesUrl) {
+        element.dataset.templatesUrl = settings.templatesUrl;
+      }
     }
   })();
 </script>
